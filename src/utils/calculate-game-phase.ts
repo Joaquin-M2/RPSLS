@@ -17,9 +17,7 @@ export default async function calculateGamePhase(
    */
   const gameContract = new Contract(gameAddress, RPSLS_ABI, signer);
 
-  //const playerOneAddress = await gameContract.j1();
   const playerTwoAddress = await gameContract.j2();
-  //const playerOneHashedCommitment = await gameContract.c1Hash();
   const playerTwoCommitment = await gameContract.c2();
   const stake = await gameContract.stake();
 
@@ -36,6 +34,5 @@ export default async function calculateGamePhase(
     return 3;
   }
 
-  // if (!playerTwoAddress) {}
   return 1;
 }

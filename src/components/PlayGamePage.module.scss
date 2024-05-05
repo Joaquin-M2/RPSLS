@@ -1,33 +1,7 @@
-.totalBetIndicatorWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 5rem;
-}
-
-.totalBetIndicator {
-  font-size: 3rem;
-  border: 1px solid black;
-  height: fit-content;
-  width: fit-content;
-  padding: 1rem 2rem;
-}
-
 .playersWrapper {
   display: flex;
   justify-content: space-between;
   margin: 5rem 15rem 0;
-}
-
-.playerColumn {
-  width: 20%;
-  text-align: center;
-}
-
-.playerTitle {
-  font-size: 3rem;
-  margin-bottom: 3rem;
-  text-decoration: underline;
 }
 
 .placeBetWrapper {
@@ -40,41 +14,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.gameAddressWrapper {
-  display: flex;
-  align-items: center;
-  margin: 2rem 0;
-}
-
-.gameAddress {
-  font-size: 2rem;
-  width: min-content;
-}
-
-.gameAddressTitle {
-  text-decoration: underline;
-}
-
-.playerChoiceWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 5rem;
-}
-
-.playerChoice {
-  font-size: 2rem;
-}
-
-.playerChoiceHidden {
-  background-color: black;
-}
-
-.timeoutTimer {
-  font-size: 2rem;
-  margin-bottom: 1rem;
 }
 
 .playerParagraph {
@@ -105,15 +44,4 @@
 
 .resultParagraph {
   font-size: 2rem;
-}
-
-.endGameMessageContainer {
-  margin: 6rem 0;
-  padding: 3rem 2rem;
-  background-color: rgba(66, 0, 255, 0.1);
-}
-
-.endGameMessage {
-  font-size: 3rem;
-  font-weight: bold;
 }

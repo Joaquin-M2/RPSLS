@@ -1,0 +1,14 @@
+.gameAddressWrapper {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.gameAddress {
+  font-size: 2rem;
+  width: min-content;
+}
+
+.gameAddressTitle {
+  text-decoration: underline;
+}

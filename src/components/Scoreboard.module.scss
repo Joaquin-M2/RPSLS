@@ -1,0 +1,14 @@
+.totalBetIndicatorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.totalBetIndicator {
+  font-size: 3rem;
+  border: 1px solid black;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem 2rem;
+}

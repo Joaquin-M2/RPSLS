@@ -19,12 +19,8 @@ import AppBar from "@mui/material/AppBar";
 function App() {
   const { setShowConnectedWalletAlert } = useConnectedWalletAlertContext();
   const { canPlayGame, setCanPlayGame } = useCanPlayGameContext();
-  const {
-    playerOneGameAddress,
-    setPlayerOneGameAddress,
-    playerTwoGameAddress,
-    setPlayerTwoGameAddress,
-  } = useGameAddressContext();
+  const { setPlayerOneGameAddress, setPlayerTwoGameAddress } =
+    useGameAddressContext();
 
   const [providerState, setProviderState] = useState<
     AbstractProvider | BrowserProvider | null

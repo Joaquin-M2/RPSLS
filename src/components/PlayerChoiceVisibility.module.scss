@@ -1,0 +1,14 @@
+.playerChoiceWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.playerChoice {
+  font-size: 2rem;
+}
+
+.playerChoiceHidden {
+  background-color: black;
+}
