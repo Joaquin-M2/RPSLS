@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import styles from "./PlayGameCentralButtons.module.scss";
 import { addressRegex } from "../utils/address-regex";
 import LoadingCircle from "./LoadingCircle";
+import { useEffect, useState } from "react";
 
 type PlayGameCentralButtonsProps = {
   gamePhase: number;
@@ -43,6 +44,20 @@ export default function PlayGameCentralButtons({
       return false;
     }
   };
+
+  const [delayedPlayerOneEndGameMessage, setDelayedPlayerOneEndGameMessage] =
+    useState("");
+
+  useEffect(() => {
+    if (gamePhase === 4) {
+      const delayPlayerOneEndGameMessage = () => {
+        setTimeout(() => {
+          setDelayedPlayerOneEndGameMessage(playerOneEndGameMessage);
+        }, 2000);
+      };
+      delayPlayerOneEndGameMessage();
+    }
+  }, [gamePhase]);
 
   return (
     <>
@@ -97,7 +112,9 @@ export default function PlayGameCentralButtons({
       {gamePhase === 4 && (
         <div className={styles.endGameMessageContainer}>
           {playerNumber === 1 && (
-            <p className={styles.endGameMessage}>{playerOneEndGameMessage}</p>
+            <p className={styles.endGameMessage}>
+              {delayedPlayerOneEndGameMessage}
+            </p>
           )}
           {playerNumber === 2 && (
             <p className={styles.endGameMessage}>{playerTwoEndGameMessage}</p>

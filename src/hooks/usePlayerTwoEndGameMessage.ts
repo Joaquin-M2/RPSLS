@@ -28,12 +28,12 @@ export function usePlayerTwoEndGameMessage(signer: JsonRpcSigner) {
         signer
       );
       const playerTwoCommitment = await gameContract.c2();
+      const gameStakeToBigInt = BigInt(gameStake);
       if (gamePhase >= 3) {
         const playerBalance = await signer.provider.getBalance(signer.address);
         setAfterBetPlayerTwoBalance(playerBalance);
       }
       if (gamePhase === 4 && playerTwoCommitment) {
-        const gameStakeToBigInt = BigInt(gameStake);
         const totalBet = gameStakeToBigInt * 2n;
 
         const solvedGamePlayerBalance = await signer.provider.getBalance(
@@ -53,7 +53,7 @@ export function usePlayerTwoEndGameMessage(signer: JsonRpcSigner) {
       if (gamePhase === 4 && !playerTwoCommitment) {
         setPlayerTwoEndGameMessage("Timeout! Player 1 cancelled the game.");
       }
-      if (gamePhase === 4 && playerTwoCommitment && !gameStake) {
+      if (gamePhase === 4 && playerTwoCommitment && !gameStakeToBigInt) {
         setPlayerTwoEndGameMessage("Game finished!");
       }
     };
