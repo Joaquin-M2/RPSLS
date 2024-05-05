@@ -53,7 +53,7 @@ export default function PlayGameCentralButtons({
       const delayPlayerOneEndGameMessage = () => {
         setTimeout(() => {
           setPlayerOneEndGameMessageIsShown(true);
-        }, 2000);
+        }, 4000);
       };
       delayPlayerOneEndGameMessage();
     } else {
