@@ -45,17 +45,19 @@ export default function PlayGameCentralButtons({
     }
   };
 
-  const [delayedPlayerOneEndGameMessage, setDelayedPlayerOneEndGameMessage] =
-    useState("");
+  const [playerOneEndGameMessageIsShown, setPlayerOneEndGameMessageIsShown] =
+    useState(false);
 
   useEffect(() => {
     if (gamePhase === 4) {
       const delayPlayerOneEndGameMessage = () => {
         setTimeout(() => {
-          setDelayedPlayerOneEndGameMessage(playerOneEndGameMessage);
+          setPlayerOneEndGameMessageIsShown(true);
         }, 2000);
       };
       delayPlayerOneEndGameMessage();
+    } else {
+      setPlayerOneEndGameMessageIsShown(false);
     }
   }, [gamePhase]);
 
@@ -112,8 +114,13 @@ export default function PlayGameCentralButtons({
       {gamePhase === 4 && (
         <div className={styles.endGameMessageContainer}>
           {playerNumber === 1 && (
-            <p className={styles.endGameMessage}>
-              {delayedPlayerOneEndGameMessage}
+            <p
+              className={styles.endGameMessage}
+              style={{
+                display: `${playerOneEndGameMessageIsShown ? "block" : "none"}`,
+              }}
+            >
+              {playerOneEndGameMessage}
             </p>
           )}
           {playerNumber === 2 && (
